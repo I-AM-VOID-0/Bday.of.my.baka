@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Laksha 💖</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 83, 166, 0.25), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(136, 70, 255, 0.25), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(255, 94, 146, 0.18), transparent 40%),
+        linear-gradient(135deg, #090711, #160d24, #271139);
+      background-size: 200% 200%;
+      animation: backgroundMove 12s ease infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* =========================
+       STARS
+    ========================= */
+
+    .stars,
+    .shooting-stars,
+    .balloons,
+    #particles,
+    #fireworks {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .stars {
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: 0.25;
+        transform: scale(0.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+
+    /* =========================
+       SHOOTING STARS
+    ========================= */
+
+    .shooting-stars {
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .shooting-star {
+      position: absolute;
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, white, transparent);
+      transform: rotate(-35deg);
+      animation: shoot 4s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translate(-250px, -150px) rotate(-35deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      35% {
+        transform: translate(110vw, 70vh) rotate(-35deg);
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .container {
+      width: min(950px, 92%);
+      margin: auto;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 80px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 10px;
+    }
+
+    .small-title {
+      letter-spacing: 5px;
+      font-size: 0.8rem;
+      opacity: 0.75;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      background: linear-gradient(
+        90deg,
+        #ff7eb3,
+        #ffd6e7,
+        #cda7ff,
+        #ff7eb3
+      );
+      background-size: 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: textGlow 5s linear infinite;
+      filter: drop-shadow(0 0 20px rgba(255, 99, 175, 0.25));
+    }
+
+    @keyframes textGlow {
+      from {
+        background-position: 0%;
+      }
+
+      to {
+        background-position: 300%;
+      }
+    }
+
+    .birthday-date {
+      margin-top: 18px;
+      font-size: 1.15rem;
+      letter-spacing: 3px;
+      color: #ffd4e7;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 22px auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin: 30px 0;
+    }
+
+    .time-box {
+      width: 92px;
+      padding: 18px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.18);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #ffabd2;
+    }
+
+    .time-box small {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .birthday-btn {
+      border: none;
+      outline: none;
+      background: linear-gradient(135deg, #ff5fa2, #9c6cff);
+      color: white;
+      font-size: 1rem;
+      padding: 15px 28px;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 12px 35px rgba(255, 80, 160, 0.25);
+      transition: 0.3s ease;
+    }
+
+    .birthday-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 15px 45px rgba(255, 80, 160, 0.4);
+    }
+
+    /* =========================
+       CAKE
+    ========================= */
+
+    .cake-area {
+      margin: 60px auto 30px;
+      height: 230px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    .cake {
+      position: relative;
+      width: 220px;
+      height: 125px;
+      background: linear-gradient(#ffadd0, #ff76b0);
+      border-radius: 15px 15px 25px 25px;
+      box-shadow:
+        inset 0 -18px 0 rgba(255,255,255,0.12),
+        0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .cake::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 100%;
+      height: 35px;
+      background: #fce4ef;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 45%,
+        92% 75%,
+        82% 40%,
+        70% 80%,
+        57% 42%,
+        45% 80%,
+        33% 40%,
+        20% 80%,
+        9% 42%,
+        0 70%
+      );
+    }
+
+    .candle {
+      position: absolute;
+      width: 16px;
+      height: 65px;
+      background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 7px,
+        #c68cff 7px,
+        #c68cff 14px
+      );
+      top: -62px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+    .flame {
+      position: absolute;
+      width: 24px;
+      height: 35px;
+      background: radial-gradient(
+        circle at 50% 70%,
+        #fff9a7 10%,
+        #ffb52e 45%,
+        #ff6b35 70%
+      );
+      border-radius: 50%;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flame 0.8s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 12px #ffb52e);
+    }
+
+    @keyframes flame {
+      from {
+        transform: translateX(-50%) rotate(-4deg) scale(0.95);
+      }
+
+      to {
+        transform: translateX(-50%) rotate(4deg) scale(1.08);
+      }
+    }
+
+    .cherry {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: #d91d59;
+      border-radius: 50%;
+      top: -6px;
+    }
+
+    .cherry:nth-child(2) { left: 30px; }
+    .cherry:nth-child(3) { left: 75px; }
+    .cherry:nth-child(4) { right: 75px; }
+    .cherry:nth-child(5) { right: 30px; }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card {
+      padding: 38px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 20px 70px rgba(0,0,0,0.18);
+      margin: 30px auto;
+      max-width: 780px;
+    }
+
+    .card h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #ff8ec4, #cda8ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .card p {
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.02rem;
+      margin-bottom: 18px;
+    }
+
+    /* =========================
+       SPECIAL HEART + BOW
+    ========================= */
+
+    .special-heart {
+      display: inline-block;
+      color: #ff8fc7;
+      filter: drop-shadow(0 0 7px #ff69b4);
+      animation: heartSparkle 1.8s ease-in-out infinite;
+    }
+
+    .special-bow {
+      display: inline-block;
+      filter: drop-shadow(0 0 7px rgba(255, 105, 180, 0.7));
+      animation: bowGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes heartSparkle {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #ff69b4);
+      }
+
+      50% {
+        transform: scale(1.18);
+        filter: drop-shadow(0 0 17px #ff9ed2);
+      }
+    }
+
+    @keyframes bowGlow {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.5));
+      }
+
+      50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 13px rgba(255, 150, 205, 0.9));
+      }
+    }
+
+    /* =========================
+       FRIENDSHIP
+    ========================= */
+
+    .friendship-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .mini-card {
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-card .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .mini-card h3 {
+      font-size: 0.95rem;
+      color: #ffd1e6;
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       LETTER
+    ========================= */
+
+    .letter {
+      position: relative;
+    }
+
+    .letter::before {
+      content: "✦";
+      position: absolute;
+      font-size: 4rem;
+      top: -25px;
+      right: 18px;
+      color: rgba(255, 128, 188, 0.12);
+    }
+
+    .highlight {
+      color: #ffb8d8;
+      font-weight: 600;
+    }
+
+    /* =========================
+       BALLOONS
+    ========================= */
+
+    .balloons {
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -180px;
+      width: 55px;
+      height: 72px;
+      border-radius: 50% 50% 48% 48%;
+      opacity: 0.35;
+      animation: balloonFloat linear infinite;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 110px;
+      background: rgba(255,255,255,0.35);
+      left: 50%;
+      top: 72px;
+    }
+
+    @keyframes balloonFloat {
+      from {
+        transform: translateY(0) rotate(-4deg);
+      }
+
+      to {
+        transform: translateY(-125vh) rotate(7deg);
+      }
+    }
+
+    /* =========================
+       PARTICLES
+    ========================= */
+
+    #particles,
+    #fireworks {
+      z-index: 50;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      animation: particleFly 2.8s forwards ease-out;
+    }
+
+    @keyframes particleFly {
+      0% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translate(var(--x), var(--y))
+          scale(1.5)
+          rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .firework-dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: explode 1.3s ease-out forwards;
+      box-shadow: 0 0 8px currentColor;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.55;
+      font-size: 0.8rem;
+      padding-top: 40px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      .friendship-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 28px 21px;
+      }
+
+      .time-box {
+        width: 72px;
+        padding: 14px 5px;
+      }
+
+      .time-box span {
+        font-size: 1.3rem;
+      }
+
+      .cake {
+        width: 190px;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="stars" id="stars"></div>
+
+  <div class="shooting-stars">
+    <div class="shooting-star" style="top:5%; left:-10%; animation-delay:1s;"></div>
+    <div class="shooting-star" style="top:30%; left:-20%; animation-delay:5s;"></div>
+    <div class="shooting-star" style="top:15%; left:-30%; animation-delay:8s;"></div>
+  </div>
+
+  <div class="balloons" id="balloons"></div>
+
+  <div id="particles"></div>
+  <div id="fireworks"></div>
+
+
+  <main class="container">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="small-title">
+        29 September ✦ A special day
+      </div>
+
+      <h1>
+        Happy<br>
+        Birthday<br>
+        Laksha
+      </h1>
+
+      <p class="birthday-date">
+        29 • 09
+      </p>
+
+      <p class="subtitle">
+        Somewhere between random conversations, stupid jokes, and two years
+        of knowing you, you became someone I'll always be grateful I met.
+      </p>
+
+
+      <!-- COUNTDOWN -->
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+
+      </div>
+
+
+      <button class="birthday-btn" onclick="birthdaySurprise()">
+        A little birthday surprise ✨
+      </button>
+
+
+      <!-- CAKE -->
+
+      <div class="cake-area">
+
+        <div class="cake">
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FRIENDSHIP
+    ========================== -->
+
+    <section class="card">
+
+      <h2>Two Years of Friendship</h2>
+
+      <p style="text-align:center;">
+        It's actually kinda crazy that someone I met through a screen
+        became such an important part of my life.
+      </p>
+
+
+      <div class="friendship-grid">
+
+        <div class="mini-card">
+
+          <span class="emoji">🌙</span>
+
+          <h3>Random Conversations</h3>
+
+          <p>
+            Somehow even the most random conversations became memories.
+          </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <span class="emoji">😭</span>
+
+          <h3>Annoying Each Other</h3>
+
+          <p>
+            Probably one of the strongest parts of this friendship.
+          </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <span class="emoji">🫶</span>
+
+          <h3>Still Here</h3>
+
+          <p>
+            Two years later, and I'm still really glad we met.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LETTER
+    ========================== -->
+
+    <section class="card letter">
+
+      <h2>
+        A Little Something I Wanted To Say
+        <span class="special-heart">💖</span>
+        <span class="special-bow">🎀</span>
+      </h2>
+
+
+      <p>
+        Two years ago, you were just someone I met online, and somehow
+        you became one of the most important people in my life.
+      </p>
+
+
+      <p>
+        I know things didn't turn out the way I once hoped, and I never
+        want you to feel guilty about that. You were honest with me,
+        and I respect you for it.
+      </p>
+
+
+      <p>
+        I'm just really grateful that I got to know you, laugh with you,
+        annoy you, and call you my best friend.
+        <span class="highlight">
+          You've become a part of my life in a way I honestly never expected.
+        </span>
+      </p>
+
+
+      <p>
+        <span class="highlight">
+          No matter how much time passes, I'll always be glad that I met you.
+        </span>
+      </p>
+
+
+      <p>
+        I hope this birthday brings you the kind of happiness you deserve.
+      </p>
+
+
+      <p style="margin-top:30px;">
+        <strong>Happy birthday, Laksha. 🤍</strong>
+      </p>
+
+
+      <p>
+        <strong>I'm really glad our paths crossed.</strong>
+      </p>
+
+    </section>
+
+
+    <footer>
+      Made with a lot of effort, a little chaos, and way too much CSS ♡
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    /* =========================
+       STARS
+    ========================== */
+
+    const starsContainer =
+      document.getElementById("stars");
+
+    for (let i = 0; i < 120; i++) {
+
+      const star =
+        document.createElement("div");
+
+      star.className = "star";
+
+      star.style.left =
+        Math.random() * 100 + "%";
+
+      star.style.top =
+        Math.random() * 100 + "%";
+
+      const size =
+        Math.random() * 3 + 1;
+
+      star.style.width =
+        size + "px";
+
+      star.style.height =
+        size + "px";
+
+      star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+      star.style.animationDuration =
+        Math.random() * 2 + 1.5 + "s";
+
+      starsContainer.appendChild(star);
+    }
+
+
+    /* =========================
+       BALLOONS
+    ========================== */
+
+    const balloonContainer =
+      document.getElementById("balloons");
+
+    const balloonColors = [
+      "#ff6fae",
+      "#bb87ff",
+      "#ff9dc9",
+      "#8768ff",
+      "#ffd0e3"
+    ];
+
+    for (let i = 0; i < 12; i++) {
+
+      const balloon =
+        document.createElement("div");
+
+      balloon.className = "balloon";
+
+      balloon.style.left =
+        Math.random() * 95 + "%";
+
+      balloon.style.background =
+        balloonColors[
+          Math.floor(
+            Math.random() * balloonColors.length
+          )
+        ];
+
+      balloon.style.animationDuration =
+        Math.random() * 8 + 10 + "s";
+
+      balloon.style.animationDelay =
+        Math.random() * 12 + "s";
+
+      balloonContainer.appendChild(balloon);
+    }
+
+
+    /* =========================
+       COUNTDOWN
+    ========================== */
+
+    function getBirthday() {
+
+      const now = new Date();
+
+      let year =
+        now.getFullYear();
+
+      let birthday =
+        new Date(
+          year,
+          8,
+          29,
+          0,
+          0,
+          0
+        );
+
+      if (now > birthday) {
+
+        birthday =
+          new Date(
+            year + 1,
+            8,
+            29,
+            0,
+            0,
+            0
+          );
+      }
+
+      return birthday;
+    }
+
+
+    let birthday =
+      getBirthday();
+
+
+    function updateCountdown() {
+
+      const now =
+        new Date();
+
+      let difference =
+        birthday.getTime() -
+        now.getTime();
+
+
+      if (difference <= 0) {
+
+        document.getElementById("days")
+          .textContent = "🎂";
+
+        document.getElementById("hours")
+          .textContent = "💗";
+
+        document.getElementById("minutes")
+          .textContent = "✨";
+
+        document.getElementById("seconds")
+          .textContent = "🎉";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (difference /
+          (1000 * 60 * 60)) % 24
+        );
+
+
+      const minutes =
+        Math.floor(
+          (difference /
+          (1000 * 60)) % 60
+        );
+
+
+      const seconds =
+        Math.floor(
+          (difference / 1000) % 60
+        );
+
+
+      document.getElementById("days")
+        .textContent =
+        String(days).padStart(2, "0");
+
+
+      document.getElementById("hours")
+        .textContent =
+        String(hours).padStart(2, "0");
+
+
+      document.getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2, "0");
+
+
+      document.getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* =========================
+       BIRTHDAY SURPRISE
+    ========================== */
+
+    function birthdaySurprise() {
+
+      createHearts();
+
+      createFireworks();
+
+      setTimeout(() => {
+        createFireworks();
+      }, 450);
+
+      setTimeout(() => {
+        createFireworks();
+      }, 900);
+    }
+
+
+    /* =========================
+       HEARTS + CONFETTI
+    ========================== */
+
+    function createHearts() {
+
+      const container =
+        document.getElementById("particles");
+
+      const symbols = [
+        "💗",
+        "🤍",
+        "✨",
+        "🌸",
+        "💖",
+        "⭐",
+        "🎉"
+      ];
+
+
+      for (let i = 0; i < 55; i++) {
+
+        const particle =
+          document.createElement("div");
+
+        particle.className =
+          "particle";
+
+        particle.innerHTML =
+          symbols[
+            Math.floor(
+              Math.random() *
+              symbols.length
+            )
+          ];
+
+
+        particle.style.left =
+          "50%";
+
+        particle.style.top =
+          "55%";
+
+
+        const angle =
+          Math.random() *
+          Math.PI * 2;
+
+
+        const distance =
+          Math.random() *
+          400 + 100;
+
+
+        const x =
+          Math.cos(angle) *
+          distance;
+
+
+        const y =
+          Math.sin(angle) *
+          distance;
+
+
+        particle.style.setProperty(
+          "--x",
+          x + "px"
+        );
+
+
+        particle.style.setProperty(
+          "--y",
+          y + "px"
+        );
+
+
+        particle.style.fontSize =
+          Math.random() *
+          18 + 15 + "px";
+
+
+        container.appendChild(
+          particle
+        );
+
+
+        setTimeout(() => {
+          particle.remove();
+        }, 3000);
+      }
+    }
+
+
+    /* =========================
+       FIREWORKS
+    ========================== */
+
+    function createFireworks() {
+
+      const container =
+        document.getElementById("fireworks");
+
+      const colors = [
+        "#ff7eb3",
+        "#ffd5e8",
+        "#c69aff",
+        "#ffb4d5",
+        "#ffffff"
+      ];
+
+
+      const centerX =
+        Math.random() *
+        window.innerWidth *
+        0.7 +
+        window.innerWidth *
+        0.15;
+
+
+      const centerY =
+        Math.random() *
+        window.innerHeight *
+        0.5 +
+        window.innerHeight *
+        0.15;
+
+
+      for (let i = 0; i < 45; i++) {
+
+        const dot =
+          document.createElement("div");
+
+        dot.className =
+          "firework-dot";
+
+
+        const color =
+          colors[
+            Math.floor(
+              Math.random() *
+              colors.length
+            )
+          ];
+
+
+        dot.style.background =
+          color;
+
+        dot.style.color =
+          color;
+
+
+        dot.style.left =
+          centerX + "px";
+
+        dot.style.top =
+          centerY + "px";
+
+
+        const angle =
+          Math.random() *
+          Math.PI * 2;
+
+
+        const distance =
+          Math.random() *
+          170 + 60;
+
+
+        const x =
+          Math.cos(angle) *
+          distance;
+
+
+        const y =
+          Math.sin(angle) *
+          distance;
+
+
+        dot.style.setProperty(
+          "--x",
+          x + "px"
+        );
+
+
+        dot.style.setProperty(
+          "--y",
+          y + "px"
+        );
+
+
+        container.appendChild(
+          dot
+        );
+
+
+        setTimeout(() => {
+          dot.remove();
+        }, 1400);
+      }
+    }
+
+
+    /* =========================
+       CLICK SPARKLES
+    ========================== */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target.classList
+            .contains("birthday-btn")
+        ) {
+          return;
+        }
+
+
+        const sparkle =
+          document.createElement("div");
+
+        sparkle.className =
+          "particle";
+
+        sparkle.innerHTML =
+          "✨";
+
+
+        sparkle.style.left =
+          event.clientX + "px";
+
+        sparkle.style.top =
+          event.clientY + "px";
+
+
+        sparkle.style.setProperty(
+          "--x",
+          (Math.random() * 100 - 50) + "px"
+        );
+
+
+        sparkle.style.setProperty(
+          "--y",
+          (-Math.random() * 120 - 40) + "px"
+        );
+
+
+        sparkle.style.fontSize =
+          "18px";
+
+
+        document
+          .getElementById("particles")
+          .appendChild(sparkle);
+
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 2800);
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
+
